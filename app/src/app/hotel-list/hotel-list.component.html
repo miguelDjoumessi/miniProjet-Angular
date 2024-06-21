@@ -1,0 +1,19 @@
+<div class="container mb-5 mt-5">
+    <h3 *ngIf="hotels && hotels.length > 0" class="mb-3">{{title}}</h3>
+    <button class="btn btn-primary mb-3" (click)="toogleBadge()" >{{showBadge ? 'Cacher':'Afficher'}} nouveau</button>
+
+    <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4" *ngFor="let hotel of hotels">
+            <div class="card">
+                <img [src]="hotel.imageUrl" [title]="hotel.hotelName" class="card-img-top" [alt]="hotel.hotelName">
+                <div class="card-body">
+                    <h5 class="card-title">{{hotel.hotelName}}</h5>
+                    <p class="card-text">
+                        {{hotel.hotelDescription}}
+                    </p>
+                    <span class="badge badge-pill badge-info" *ngIf="showBadge">Nouveau</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
