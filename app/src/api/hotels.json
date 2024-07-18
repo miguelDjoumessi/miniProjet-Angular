@@ -1,0 +1,50 @@
+[
+    {
+       "hotelId": 1, 
+       "hotelName":"Luxior",
+       "price": 100.0,
+       "imageUrl": "../assets/images/chambre_anglaise.jpg",
+       "hotelDescription": "chambre luxieuse dans la ville de londre",
+       "rating": 3.5
+    },
+    {
+      "hotelId": 2, 
+       "hotelName": "Indiara hotels",
+       "price": 120.0,
+       "imageUrl": "../assets/images/chambre_indonesienne.jpg",
+       "hotelDescription": "chambre d'hotels dans une ville de l'inde",
+       "rating": 2.3
+    },
+    {
+       "hotelId": 3, 
+       "hotelName": "Le GoraDor",
+       "price": 130.0,
+       "imageUrl": "../assets/images/chambre_kribienne.jpg",
+       "hotelDescription": "profiter d'une chambre d'hotels donnant vue sur la mer dans la ville de kribie",
+       "rating": 4
+    },
+    {
+       "hotelId": 4, 
+       "hotelName": "Spatior",
+       "price": 140.0,
+       "imageUrl": "../assets/images/chambre_losangeles.jpg",
+       "hotelDescription": "chambre d'hotels dans les manifique graftciel de losangeles",
+       "rating": 5
+    },
+    {
+       "hotelId": 5, 
+       "hotelName": "Louange",
+       "price": 150.0,
+       "imageUrl": "../assets/images/chambre_violet.jpg",
+       "hotelDescription": "chambre au milieu d'une belle ville",
+       "rating": 4.2
+    },
+    {
+       "hotelId": 6, 
+       "hotelName":" Oulala  hotel",
+       "price": 160.0,
+       "imageUrl": "../assets/images/chambre_vue_sur_plage.jpg",
+       "hotelDescription": "chambre au milieu d'hawouail",
+       "rating": 3.8
+    }
+]

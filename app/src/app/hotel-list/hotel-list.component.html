@@ -1,9 +1,26 @@
 <div class="container mb-5 mt-5">
     <h3 *ngIf="hotels && hotels.length > 0" class="mb-3">{{title}}</h3>
-    <button class="btn btn-primary mb-3" (click)="toogleBadge()" >{{showBadge ? 'Cacher':'Afficher'}} nouveau</button>
-
+    <button class="btn btn-primary mb-3 d-flex" (click)="toogleBadge()" >
+        <span class="material-icons">{{showBadge ? 'visibility_off': 'visibility'}}</span>
+        <span class="mx-2">{{showBadge ? 'Cacher':'Afficher'}} nouveau </span>
+    </button>
+    <hr>
+    <div class="my-2">
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <span>Filtre actuel: </span>
+                <b>{{hotelFilter}}</b>
+            </div>
+            <div class="col-md-8 form-group">
+                <input type="text" class="form-control" [(ngModel)]="hotelFilter">
+            </div>
+        </div>
+        <div class="alert alert-primary" *ngIf="!!message">
+            {{message}}
+        </div>
+    </div>
     <div class="row row-cols-1 row-cols-md-3">
-        <div class="col mb-4" *ngFor="let hotel of hotels">
+        <div class="col mb-4" *ngFor="let hotel of FilteredHotels">
             <div class="card">
                 <img [src]="hotel.imageUrl" [title]="hotel.hotelName" class="card-img-top" [alt]="hotel.hotelName">
                 <div class="card-body">
@@ -11,7 +28,15 @@
                     <p class="card-text">
                         {{hotel.hotelDescription}}
                     </p>
-                    <span class="badge badge-pill badge-info" *ngIf="showBadge">Nouveau</span>
+                    <p>{{hotel.price | currency: 'EUR' : 'symbol'}}</p>
+
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <compo-rating [rating]="hotel.rating" (starRatingClicked)="receiveRating($event)"></compo-rating>
+                        <span class="material-icons bg-info text-white p-2 btn rounded-circle" [routerLink] = "['/hotels', hotel.hotelId]">
+                            keyboard_arrow_right
+                        </span>
+
+                    </div>
                 </div>
             </div>
         </div>
